@@ -4,7 +4,9 @@ package HWSmallProblems;
  ****************************************************************************************
  *         REQUIRED HELP CITATION
  *
- *         TODO: cite your help here or say "only used CSSE220 materials"
+ *         https://www.geeksforgeeks.org/java/java-math-sqrt-method/
+ *
+ *         DONE: cite your help here or say "only used CSSE220 materials"
  ****************************************************************************************
  *
  * <dl>
@@ -60,7 +62,7 @@ public class HWSmallProblems {
 	 * @return
 	 */
 	public static boolean secondDigit5(int input) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+			return (input / 10) % 10 == 5;
 	}
 
 
@@ -83,8 +85,21 @@ public class HWSmallProblems {
 	 * Requires: for loops
 	 */
 	public static double pow(int num, int power) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
-	}
+		double result = 1.0;
+
+		if (power>=0) {
+			for (int k = 0; k < power; k++) {
+				result *= num;
+			}
+		} else {
+			for (int k = 0; k > power; k--) {
+				result *= num;
+			}
+			result = 1.0 / result;
+		}
+
+		return result;
+		}
 
 	/**
 	 * Creates an array of all the powers of two, up to (and including) the given
@@ -101,7 +116,18 @@ public class HWSmallProblems {
 	 * Requires: arrays, for loops
 	 */
 	public static int[] powersOfTwo(int maxExponent) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+		if (maxExponent < 0) {
+			return new int[0];
+		}
+		int[] power = new int[maxExponent + 1];
+
+		int result = 1;
+
+		for (int k = 0; k < power.length; k++) {
+			power[k] =result;
+			result *= 2;
+		}
+		return power;
 	}
 
 	/**
@@ -117,7 +143,17 @@ public class HWSmallProblems {
 	 * Requires: arrays, for loops
 	 */
 	public static int[] maxArray(int[] one, int[] two) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+		int [] number = new int[one.length];
+
+		for (int k = 0; k < one.length; k++) {
+			if (one[k] > two[k]) {
+				number[k] = one[k];
+			} else {
+				number[k] = two[k];
+			}
+
+		}
+		return number;
 	}
 
 	/**
@@ -135,7 +171,17 @@ public class HWSmallProblems {
 	 * @return a score
 	 */
 	public static int footballScore(char[] input) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+		int score = 0;
+
+		for (int k = 0; k < input.length; k++) {
+			if (input[k] == 'T') {
+				score += 7;
+			} else {
+				score += 3;
+			}
+		}
+			return score;
+
 	}
 
 	/**
@@ -152,6 +198,6 @@ public class HWSmallProblems {
 	 * cite your source in the help citation at the top of the file.
 	 */
 	public static double distanceFromOrigin(double x, double y) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+		return Math.sqrt((x * x) + (y * y));
 	}
 }

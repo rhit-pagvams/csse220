@@ -11,7 +11,8 @@ public class Point {
 	public static final Point ORIGIN = new Point(0,0);
 	
 	//Instance Variables
-	private double x, y;
+	private final double x;
+    private final double y;
 	
 	//Constructor
 	public Point(double x, double y) {

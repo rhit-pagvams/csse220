@@ -2,7 +2,7 @@
 /**
  * TODO Put here a description of what this class does.
  *
- * @author TODO <Add your name here>.
+ * @author DONE <Margad Pagva>.
  *         Created Dec 15, 2013.
  */
 public class Two2DArrayProblems {
@@ -21,8 +21,15 @@ public class Two2DArrayProblems {
 	 * @return the number of times 4 occurs in the array.
 	 */
 	public static int count4s(int[][] data) {
+		int count = 0;
+		for (int r = 0; r < data[r].length; r++) {
+			for (int c = 0; c < data[r].length; c++)
+				if (data[r][c] == 4) {
+				count++;
+				}
 
-		return 0;
+	}
+		return count;
 	}
 	
 	

@@ -3,8 +3,8 @@
 import java.util.HashMap;
 
 public class StudentGradebook {
-	private String name;
-	private HashMap<String, Integer> grades;
+	private final String name;
+	private final HashMap<String, Integer> grades;
 	
 	public StudentGradebook() {
 		this("Studenty McStudenton");

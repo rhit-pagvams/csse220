@@ -26,7 +26,15 @@ public class CodingBatPractice {
 	 * static       = because main is static (we will learn about static more later in the course)
 	 */
 	public static int[] fizzArray3(int start, int end) {
-		//TODO finish this method 
+		//DONE finish this method{
+			int[] a = new int[end - start];
+			for (int k = 0; k < a.length; k++) {
+				a[k] = start + k;
+			}
+
+			return a;
+		}
+
 		return null;
 	}
 	

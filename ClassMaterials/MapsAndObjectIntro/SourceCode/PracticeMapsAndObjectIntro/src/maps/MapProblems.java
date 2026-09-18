@@ -9,6 +9,14 @@ import java.util.HashMap;
  * @author TODO <Add your name here>.
  */
 public class MapProblems {
+	public static HashMap<Integer, Integer> arrayToMap(int[] values) {
+		HashMap<Integer, Integer> indexToValue = new HashMap<>();
+		for (int i = 0; i < values.length; i++) {
+			indexToValue.put(i, i * i);
+		}
+
+		return indexToValue;
+	}
 	
 	/**
 	 * ensures: finds and returns a duplicated nickname found in nicknames
@@ -22,8 +30,13 @@ public class MapProblems {
 	 * While building the map, if a key already exists, then you know it is a duplicate
 	 */
 	public static String duplicateNicknames(String[] realNames, String[] nicknames) {
-		return null;
-	} // duplicateNicknames
+		{ Map<String, String> nicknameMap = new HashMap<String, String>();
+			for (int i = 0; i < nicknames.length; i++) {
+
+		}
+	}
+	return null;
+}
 	
 	
 	/**

@@ -1,7 +1,7 @@
 
 public class Student {
 	private String name;
-	private String email;
+	private final String email;
 	private int year;
 	
 	public Student(String name, String email, int year) {

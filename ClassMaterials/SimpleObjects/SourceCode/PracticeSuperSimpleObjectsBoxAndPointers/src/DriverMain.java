@@ -20,7 +20,7 @@ public class DriverMain {
 		s1.setName("Jonny");
 		
 		System.out.println("Question #2 Part #1");
-		System.out.println("s1: " + s1.toString());	
+		System.out.println("s1: " + s1);
 		System.out.println();
 	} // Q2Part1
 	
@@ -43,7 +43,7 @@ public class DriverMain {
 		s2 = new Student("Tommy", "t@rt.com", 2);
 		
 		System.out.println("Question #2 Part #2");
-		System.out.println("team1: " + team1.toString());
+		System.out.println("team1: " + team1);
 		System.out.println();
 	} // Q2Part2
 	
@@ -69,7 +69,7 @@ public class DriverMain {
 		s4.setName("Sam");		
 		
 		System.out.println("Question #2 Part #1");
-		System.out.println("team2: " + team2.toString());
+		System.out.println("team2: " + team2);
 		System.out.println();
 	} // Q2Part3
 	

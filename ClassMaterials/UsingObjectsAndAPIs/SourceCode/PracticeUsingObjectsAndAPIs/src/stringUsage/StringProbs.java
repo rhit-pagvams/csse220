@@ -87,7 +87,13 @@ public class StringProbs {
 	 * "" returns false
 	 */	
 	public static boolean firstMatchesLast(String input) {
-		// YOU solve this one
+		int last = input.length() - 1;
+
+		if (input.length() == 0)
+			return false;
+
+		if (input.charAt(0) == input.charAt(last))
+			return true;
 		return false;
 	}
 

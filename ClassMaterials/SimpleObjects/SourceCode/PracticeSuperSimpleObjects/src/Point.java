@@ -11,7 +11,8 @@ public class Point {
 	public static final Point ORIGIN = new Point(0,0);
 	
 	//Instance Variables
-	private double x, y;
+	private final double x;
+    private final double y;
 	
 	//Constructor
 	public Point(double x, double y) {
@@ -42,6 +43,10 @@ public class Point {
 	 */
 	private double distanceTo(Point other) {
 		//TODO complete this method
+	=
+
+
+
 		return 0;
 	}
 
@@ -66,9 +71,10 @@ public class Point {
 	 * @return distance between (x1,y1) and (x2,y2)
 	 */
 	public static double distanceFormulaCalc(double x1, double x2, double y1, double y2 ) {
-		double xDiff = x1-x2;
-		double yDiff = y1-y2;
-		return Math.sqrt(xDiff*xDiff + yDiff*yDiff);
+		double squaredXDiff = (a.x - b.x) * (a.x - b.x);
+		double squaredYDiff = (a.y - b.y) * (a.y-b.y);
+
+		return 0;
 	}
 	
 }

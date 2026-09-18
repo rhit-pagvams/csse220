@@ -17,7 +17,7 @@ public class BankAccount {
 	
 	private String name;
 	private double balance;
-	private ArrayList<String> transactionLog;
+	private final ArrayList<String> transactionLog;
 	
 	public BankAccount(String name) {
 		this(name, 0);

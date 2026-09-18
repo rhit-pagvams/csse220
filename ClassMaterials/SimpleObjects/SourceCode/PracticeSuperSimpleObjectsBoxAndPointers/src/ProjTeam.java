@@ -1,8 +1,8 @@
 public class ProjTeam {
-	private String tName;
-	private Student[] members;
+	private final String tName;
+	private final Student[] members;
 	private int numMems;
-	private int max;
+	private final int max;
 	
 	public ProjTeam(String tName, int max) {
 		this.tName = tName;

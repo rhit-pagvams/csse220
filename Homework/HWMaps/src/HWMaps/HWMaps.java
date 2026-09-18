@@ -9,7 +9,7 @@ import java.util.HashMap;
  * ***************************************************************************************
  * REQUIRED HELP CITATION
  *
- * TODO: cite your help here or say "only used CSSE220 materials"
+ * DONE: cite your help here or say "only used CSSE220 materials"
  * ***************************************************************************************
  *
  * <dl>
@@ -46,9 +46,14 @@ public class HWMaps {
      * return value = {CDG=118, FOC=14, IND=230}
      */
     public static HashMap<String, Integer> buildAirportMap(String[] airportCodes, Integer[] airportElevations) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
-    } // buildAirportMap
+        HashMap<String, Integer> airportMap = new HashMap<>();
 
+        for (int i = 0; i < airportCodes.length; i++) {
+            airportMap.put(airportCodes[i], airportElevations[i]);
+        }
+
+        return airportMap;
+    }
     /**
      * Finds the first number in an array divisible by 77 and returns it.
      * <p>
@@ -61,7 +66,12 @@ public class HWMaps {
      * Don't forget about the modulus operator (%)
      */
     public static int firstDivisibleBy77(int[] numbers) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 77 == 0) {
+                return numbers [i];
+            }
+        }
+        return -1;
     }
 
     /**
@@ -86,9 +96,25 @@ public class HWMaps {
      * return value = 'c'
      */
     public static char mostCommonCharacter(String inputString) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
-    } // mostCommonCharacter
+        HashMap<Character, Integer> counts = new HashMap<>();
 
+        char mostCommon = inputString.charAt(0);
+        int highestCount = 0;
+
+        for (int i = 0; i < inputString.length(); i++) {
+            char current = inputString.charAt(i);
+
+            int newCount = counts.getOrDefault(current, 0) + 1;
+            counts.put(current, newCount);
+
+            if (newCount > highestCount) {
+                highestCount = newCount;
+                mostCommon = current;
+
+            }
+        }
+        return mostCommon;
+    }
 
     /**
      * During a heat wave, any sign of lower temperatures becomes breaking news.
@@ -122,8 +148,23 @@ public class HWMaps {
      * return value = null, because no city experienced a temperature drop
      */
     public static String getTemperatureDropCity(int[] recordedTemps, String[] cityNames) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
-    } // getTemperatureDropCity
+        HashMap<String, Integer> lastTemp = new HashMap<>();
+        String dropCity = null;
+
+        for (int i = 0; i < recordedTemps.length; i++) {
+
+            String city = cityNames[i];
+            int temp = recordedTemps[i];
+
+            if (lastTemp.containsKey(city)) {
+                if (temp < lastTemp.get(city)) {
+                    dropCity = city;
+                }
+            }
+            lastTemp.put(city, temp);
+        }
+        return dropCity;
+    }
 
     /**
      * Given two arrays, count the number of times the first array occurs in the
@@ -138,7 +179,21 @@ public class HWMaps {
      * Requires: arrays, nested for loops
      */
     public static int timesOccur(int[] shorter, int[] longer) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
+        int count = 0;
+
+        for (int i = 0; i<= longer.length - shorter.length; i++) {
+            int same = 0;
+
+            for (int j = 0; j < shorter.length; j++) {
+                if (shorter[j] == longer[i + j]) {
+                    same++;
+                }
+            }
+            if (same == shorter.length) {
+                count ++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -189,6 +244,25 @@ public class HWMaps {
      * @return list containing all names that correspond to some city more than once
      */
     public static ArrayList<String> citiesVisitedMoreThanOnce(String[] names, String[] citiesVisited) {
-        throw new UnsupportedOperationException("TODO: Remove this line and implement this method.");
+        HashMap<String, ArrayList<String>> visits = new HashMap<>();
+        ArrayList<String> answer = new ArrayList<>();
+
+        for (int i = 0; i < names.length; i++) {
+
+            String name = names[i];
+            String city = citiesVisited[i];
+
+            if(visits.containsKey(name) == false) {
+                visits.put(name, new ArrayList<String>());
+            }
+            if (visits.get(name).contains(city)) {
+                if (answer.contains(name) == false) {
+                    answer.add(name);
+                }
+            } else {
+                visits.get(name).add(city);
+            }
+        }
+        return answer;
     }
 }

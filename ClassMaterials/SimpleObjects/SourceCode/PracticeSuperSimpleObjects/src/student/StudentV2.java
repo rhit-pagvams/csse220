@@ -1,7 +1,7 @@
 package student;
 
 public class StudentV2 {
-	private String name;
+	private final String name;
 	private static char grade;
 
 	public StudentV2(String name, char grade) {

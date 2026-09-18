@@ -1,8 +1,8 @@
 package student;
 
 public class StudentV1 {
-	private String name;
-	private char grade;
+	private final String name;
+	private final char grade;
 
 	public StudentV1(String name, char grade) {
 		this.name = name;

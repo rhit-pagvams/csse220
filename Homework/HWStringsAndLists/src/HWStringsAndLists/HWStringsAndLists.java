@@ -7,7 +7,7 @@ import java.util.ArrayList;
  ***************************************************************************************
  *         REQUIRED HELP CITATION
  *
- *         TODO: cite your help here or say "only used CSSE220 materials"
+ *         DONE: cite your help here or say "only used CSSE220 materials"
  ***************************************************************************************
  *
  * <dl>
@@ -50,7 +50,14 @@ public class HWStringsAndLists {
 	 * Requires if statements, strings
 	 */
 	public static boolean endsWithUpperCaseLetter(String input) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+		if (input.length() == 0) {
+			return false;
+		}
+
+		char last = input.charAt(input.length() - 1);
+
+		return Character.isUpperCase(last);
+
 	}
 
 	/**
@@ -81,7 +88,14 @@ public class HWStringsAndLists {
 	 * Requires: for loops or while loops, strings
 	 */
 	public static int firstDifference(String one, String two) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+		for (int i = 0; i < one.length(); i++) {
+			if (one.charAt(i) != two.charAt(i)) {
+
+				return i;
+			}
+
+		}
+		return -1;
 	}
 
 	/**
@@ -99,7 +113,16 @@ public class HWStringsAndLists {
 	 * @return a score
 	 */
 	public static int footballScore(String input) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+		int score = 0;
+		for (int i = 0; i < input.length(); i++) {
+			if (input.charAt(i) == 'T') {
+				score += 7;
+			}
+			else if (input.charAt(i) == 'F') {
+				score += 3;
+			}
+		}
+		return score;
 	}
 
 	/**
@@ -119,7 +142,22 @@ public class HWStringsAndLists {
 	 * Requires: for loops, strings
 	 */
 	public static char mostCommonCharacter(String input) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+		char most = input.charAt(0);
+		int highest = 0;
+
+		for (int i = 0; i < input.length(); i++) {
+			int count = 0;
+			for (int j = 0; j < input.length(); j++) {
+				if (input.charAt(i) == input.charAt(j)) {
+					count++;
+				}
+			}
+			if (count > highest) {
+				highest = count;
+				most = input.charAt(i);
+			}
+		}
+		return most;
 	}
 
 
@@ -144,7 +182,17 @@ public class HWStringsAndLists {
 	 *
 	 */
 	public static ArrayList<String> doubleDouble(ArrayList<String> input) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+		ArrayList<String> output = new ArrayList<String>();
+		for (int i = 0; i < input.size(); i++) {
+			String currentString = input.get(i);
+
+			output.add(currentString);
+
+			if (currentString.equals("double")) {
+				output.add(currentString);
+			}
+		}
+		return output;
 	}
 
 	/**
@@ -159,7 +207,12 @@ public class HWStringsAndLists {
 	 * threeCharacterStrings(["ab"])   returns []
 	 */
 	public static ArrayList<String> threeCharacterStrings(String input) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+		ArrayList<String> output = new ArrayList<String>();
+		for (int i = 0; i <input.length() - 2; i++) {
+			String threeLetters = input.substring(i, i + 3);
+			output.add(threeLetters);
+		}
+		return output;
 	}
 
 	/**
@@ -186,6 +239,18 @@ public class HWStringsAndLists {
 	 * you will not return a new list, but modify the strings list
 	 */
 	public static void truncateStringsAtX(ArrayList<String> strings) {
-		throw new UnsupportedOperationException("TODO: delete this statement and implement this operation.");
+
+		for (int i = 0; i < strings.size(); i++) {
+			String currentString = strings.get(i);
+
+			for (int j = 0; j < currentString.length(); j++) {
+
+				if (currentString.charAt(j) == 'X') {
+					String shortened = currentString.substring(0, j + 1);
+					strings.set(i, shortened);
+					break;
+				}
+			}
+		}
 	}
 }
