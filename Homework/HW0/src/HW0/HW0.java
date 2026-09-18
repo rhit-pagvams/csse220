@@ -4,7 +4,9 @@ package HW0;
  **************************************************************************************** 
  *         REQUIRED HELP CITATION
  * 
- *         TODO: cite your help here or say "only used CSSE220 materials"
+ *         DONE:
+ *         In class work
+ *         cite your help here or say "only used CSSE220 materials"
  ****************************************************************************************
  * 
  * <dl> 
@@ -32,34 +34,41 @@ public class HW0 {
 	 * This method takes in 4 separate integers. The first two comprise the first
 	 * fraction as the numerator and denominator, respectively. The third and fourth
 	 * integers comprise the second fraction.
-	 * 
+	 * <p>
 	 * This method returns the decimal result of adding the two fractions
-	 * 
+	 * <p>
 	 * Example
-	 * 
+	 * <p>
 	 * addFraction(1,2,1,4) returns 0.75
 	 */
 	public static double addFraction(int num1, int den1, int num2, int den2) {
-		// TODO: Implement this method
-		throw new UnsupportedOperationException("Not yet implemented.");
+		// DONE: Implement this method
+		return (num1 * 1.0) / den1 + (double) num2 / den2;
 	}
-	
+
+
 	/**
 	 * Takes two integers and determines whether their product is a multiple of 4
-	 * 
-	 * Examples: 
+	 * <p>
+	 * Examples:
 	 * given the inputs (2, 6), return true
 	 * given the inputs (5, 3), return false
 	 * given the inputs (9, 10), return false
 	 * given the inputs (0, 7), return true
-	 * 
+	 *
 	 * @param x - an integer
 	 * @param y - an integer
 	 * @return true if x*y is a multiple of four, false otherwise
 	 */
 	public static boolean isProductAMultipleOfFour(int x, int y) {
 		// TODO: Implement this method
-		throw new UnsupportedOperationException("Not yet implemented.");
-	}
+		int product = x * y;
 
-} // end class HW0
+		if (product % 4 == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+ // end class HW0

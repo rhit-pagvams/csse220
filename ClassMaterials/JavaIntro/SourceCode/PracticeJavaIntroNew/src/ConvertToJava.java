@@ -8,14 +8,18 @@ public class ConvertToJava {
     public static void main(String[] args) {
         // Create myFunction as a static function in this same class, adding/modifying parameters/arguments as needed. 
         // Example: 
-        // myFunction(25.0); // Modify this to test your function. 
-
-        // or, if you want to return and print some value:
-        // [datatype] result = myFunction([arguments]);
-        // System.out.println(result);
+         celsiusToFahrenheit(25.0); // Modify this to test your function.
+//
+//         or, if you want to return and print some value:
+//         [datatype] result = myFunction([arguments]);
+//         System.out.println(result);
     }
 
-    // TODO: Add your converted function here. 
+    // DONE: Add your converted function here.
+    public static void celsiusToFahrenheit(double celsius) {
+        double fahr = celsius * 9.0 / 5 + 32;
+        System.out.printf("%.1f C = %.1f F%n", celsius, fahr);
+    }
 
     // === EXAMPLE ===
     // Python version: 
