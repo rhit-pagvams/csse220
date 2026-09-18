@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SourceCode/PracticeSuperSimpleObjects/PracticeSuperSimpleObjects.iml" filepath="$PROJECT_DIR$/SourceCode/PracticeSuperSimpleObjects/PracticeSuperSimpleObjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SourceCode/PracticeSuperSimpleObjectsBoxAndPointers/PracticeSuperSimpleObjectsBoxAndPointers.iml" filepath="$PROJECT_DIR$/SourceCode/PracticeSuperSimpleObjectsBoxAndPointers/PracticeSuperSimpleObjectsBoxAndPointers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SourceCode/PracticeSuperSimpleObjectsSolution/PracticeSuperSimpleObjectsSolution.iml" filepath="$PROJECT_DIR$/SourceCode/PracticeSuperSimpleObjectsSolution/PracticeSuperSimpleObjectsSolution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SimpleObjects.iml" filepath="$PROJECT_DIR$/.idea/SimpleObjects.iml" />
+    </modules>
+  </component>
+</project>
