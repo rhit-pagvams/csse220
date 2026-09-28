@@ -67,8 +67,8 @@ public class RotateComponent extends JComponent {
 		// =======
 		int faceWidth = 200;
 		int faceHeight = 150;
-		int faceLocX = 0;
-		int faceLocY = 0;
+		int faceLocX = -100;
+		int faceLocY =-75;
 		// To make drawing centered around the face's center, you'll need to
 		// change the face's (x, y) drawing location, i.e., the first 2 parameters in the drawRect (below)
 		// Then you'll have to make appropriate changes to the (x, y) coordinates for the left eye, right eye, and nose (below)

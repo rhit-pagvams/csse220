@@ -2,18 +2,24 @@ Reflection Questions:
 
 1.A In your implementation could you replace each Question class with just a Java String (yes or no)? 
 
+No
 
 1.B Explain why or why not (2-3 sentences)
 
-
+It needs an id and a questionQuery, so a string by itself would not be able to store all the information. Using question
+also allows multiple quizzes to use the same question, so updating the question changes it everywhere.
 
 2.A. What data type did you use to represent the 1-to-many relationship between QuizMain and Question? (provide the type declaration)
 
+Map<Integer, Question>
 
 2.B. What is another data type you could have used? (provide the type declaration) 
 
-
+ArrayList<Question>
 
 2.C. Would that have made your implementation easier or harder to implement? Explain why (2-3 sentences)
 
+An ArrayList<Question> would make implementation a little harder because it would have to search through the list to find
+the question with its' specific id. A <ap<Integer, Question> allows the question id to be used as a key and directly retrieve
+the question.
 

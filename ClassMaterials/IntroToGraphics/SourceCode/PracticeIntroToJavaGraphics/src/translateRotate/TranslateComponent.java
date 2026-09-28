@@ -24,13 +24,17 @@ public class TranslateComponent extends JComponent {
 		Graphics2D g2d = (Graphics2D) g;
 		
 		// =======
-		// TODO #1
+		// DONE #1
 		// Use a translate command to ensure that the face always appears in the center of the window
 		// 
 		// HINT: 
 		// Use this.getWidth() and this.getHeight() to find the correct (x, y) location to translate to
 		// =======
 		
+		int centerX = this.getWidth() / 2;
+		int centerY = this.getHeight() / 2;
+
+		g2d.translate(centerX, centerY);
 
 
 		// =======
@@ -65,16 +69,20 @@ public class TranslateComponent extends JComponent {
 		g2d.drawRect(noseLocX, noseLocY, noseWidth, noseHeight);
 	
 		// =======
-		// TODO #2
-		// Use a translate command to undo the translate done above in TODo #1
-		// 
+		// DONE #2
+		// Use a translate command to undo the translate done above in DONE #1
+
+		double degreesToRotate = 30;
+
 		// HINT: 
-		// Use the negative of the (x, y) coordinates you computed in TODO #1
+		// Use the negative of the (x, y) coordinates you computed in DONE #1
 		// 		
 		// WARNING: 
 		// Be sure to always undo any translate you've done
 		// =======
-		
+
+		g2d.translate(-centerX, -centerY);
+
 	} // paintComponent
 	
 	

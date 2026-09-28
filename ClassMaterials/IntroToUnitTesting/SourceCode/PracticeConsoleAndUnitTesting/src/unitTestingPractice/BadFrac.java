@@ -73,6 +73,11 @@ public class BadFrac {
 		BadFrac var1 = new BadFrac(num, den);
 		return add(var1);
 	}
+
+
+
+
+
 	
 	//TODO2: Write some unit tests in BadFracTest.java to discover what is wrong
 	/**
@@ -87,5 +92,9 @@ public class BadFrac {
 		int commonDen = this.denominator * incoming.denominator;
 		int newNum = (this.numerator*incoming.denominator) + (incoming.numerator*this.denominator);
 		return new BadFrac(newNum, commonDen);
+
+		BadFrac a = new BadFrac(1,2);
+
+
 	}
 }
