@@ -1,31 +1,31 @@
 @startuml
 class Circle {
-- double radius
-+ double calcArea()
-+ double calcPerimeter()
-+ String toString()
+-double radius
++double calcArea()
++double calcPerimeter()
++String toString()
 }
 
 abstract class AbstractShape {
-+ {abstract}double calcArea()
-+ {abstract}double calcPerimeter()
-+ double calcSemiPerimeter()
-+ boolean hasLargerArea(AbstractShape)
++{abstract}double calcArea()
++{abstract}double calcPerimeter()
++double calcSemiPerimeter()
++boolean hasLargerArea(AbstractShape)
 }
 
 interface Shape {
-~ double getArea()
-~ double getPerimeter()
-~ double calcSemiPerimeter()
-~ boolean hasLargerArea(AbstractShape)
++double getArea()
++double getPerimeter()
++double calcSemiPerimeter()
++boolean hasLargerArea(AbstractShape)
 }
 
 class ShapeDemo {
-+ {static} void main(String[])
-+ {static} double totalArea(AbstractShape[])
-+ {static} double totalSemiperimeter(AbstractShape[])
-+ {static} AbstractShape findLargestArea(AbstractShape[])
-+ {static} void printAll(AbstractShape[])
++{static} void main(String[])
++{static} double totalArea(AbstractShape[])
++static} double totalSemiperimeter(AbstractShape[])
++{static} AbstractShape findLargestArea(AbstractShape[])
++{static} void printAll(AbstractShape[])
 }
 
 class Rectangle {
@@ -38,16 +38,13 @@ class Rectangle {
 + double getWidth()
 }
 
-
 class Square {
 + String toString()
 }
 
-
-
-AbstractShape <|-- Circle
-AbstractShape <|-- Rectangle
-Rectangle <|-- Square
+Circle -right-|> AbstractShape
+Rectangle -left-|> AbstractShape
+Rectangle <|-right- Square
 
 ShapeDemo ..> AbstractShape
 ShapeDemo ..> Rectangle
