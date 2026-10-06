@@ -5,11 +5,11 @@ import java.awt.Polygon;
 /**
  * Class representing a fox, drawn as a triangular face with triangular ears.
  *
- * @author YOUR NAME HERE
+ * @author Margad Pagva
  * <br>
  * **************************************************************************************
  * REQUIRED HELP CITATION
- *         TODO: cite your help here or say "only used CSSE220 materials"
+ *         DONE: cite your help here or say "only used CSSE220 materials"
  * **************************************************************************************
  */
 public class Fox {
@@ -41,7 +41,12 @@ public class Fox {
         int[] xPoints = {0, WIDTH / 2, WIDTH};
         int[] yPoints = {0, HEIGHT, 0};
 
-        // TODO: Construct a Polygon for the fox face, then fill it with the fox's color.
+        // DONE: Construct a Polygon for the fox face, then fill it with the fox's color.
+
+        Polygon face = new Polygon(xPoints, yPoints, 3);
+        g2.setColor(color);
+        g2.fill(face);
+
 
         // Draw the fox ears
         int[] leftEarXPoints = {0, EAR_WIDTH / 2, EAR_WIDTH};
@@ -50,7 +55,14 @@ public class Fox {
         int[] rightEarXPoints = {WIDTH - EAR_WIDTH, WIDTH - EAR_WIDTH / 2, WIDTH};
         int[] rightEarYPoints = {0, -EAR_HEIGHT, 0};
 
-        // TODO: Construct Polygons for the left and right ears, then fill them with EAR_COLOR.
+        // DONE: Construct Polygons for the left and right ears, then fill them with EAR_COLOR.
+
+        Polygon leftEar = new Polygon(leftEarXPoints, leftEarYPoints, 3);
+        Polygon rightEar = new Polygon(rightEarXPoints, rightEarYPoints, 3);
+
+        g2.setColor(EAR_COLOR);
+        g2.fill(leftEar);
+        g2.fill(rightEar);
 
         // Undo translation
         g2.translate(-x, -y);
