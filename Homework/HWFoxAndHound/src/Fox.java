@@ -5,7 +5,7 @@ import java.awt.Polygon;
 /**
  * Class representing a fox, drawn as a triangular face with triangular ears.
  *
- * @author Margad Pagva
+ * @author MargadPagva
  * <br>
  * **************************************************************************************
  * REQUIRED HELP CITATION
