@@ -18,7 +18,7 @@ public class ClickViewer {
 		
 		ClickComponent component = new ClickComponent();
 		
-		//TODO: Create a clickListener that takes in a ClickComponent and 
+		//DONE: Create a clickListener that takes in a ClickComponent and
 		//implements MouseListener, then comment in the next two lines
 		//MouseListener dl = new ClickListener(component);
 		//component.addMouseListener(dl);
@@ -26,7 +26,7 @@ public class ClickViewer {
 		frame.add(component, BorderLayout.CENTER);
 		frame.add(clearButton, BorderLayout.SOUTH);
 		
-		//TODO: Add ActionListener for the clearButton by
+		//DONE: Add ActionListener for the clearButton by
 		//implementing an anonymous class that calls the
 		//clear method of the ClickComponent. You may need
 		//to make a minor change to the ClickComponent declaration above.

@@ -29,5 +29,7 @@ public class DrawComponent extends JComponent {
 			g2.fill(r);
 		}
 	}
+
+	public void getCircle()
 	
 }
