@@ -1,7 +1,7 @@
 package simulationObjects;
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.geom.Dimension2D;
+import java.awt.Dimension;
 
 /**
  * This class represents a Person who can either be healthy (green), infected (orange), or recovered (pink).
@@ -22,7 +22,7 @@ import java.awt.geom.Dimension2D;
  * @author YOUR_NAME
  *
  */
-public class Person {
+public class Person extends SimulationObject {
 	
 	public static final int PERSON_RADIUS = 10;
 	public static final int PERSON_SPEED = 5;
@@ -35,41 +35,101 @@ public class Person {
 	public static final Color RECOVERED_COLOR = new Color(196, 116, 195);
 	
 	
-	//TODO: add instance variables
-	
-	//TODO: add constructors
+	//DONE: add instance variables
 
+	private int status;
+	private int infectedTime;
 
-	public void drawOn(Graphics2D g) {
-		//USE COLOR CONSTANTS to draw people with different statuses
+	private static final int HEALTHY = 0;
+	private static final int INFECTED = 1;
+	private static final int RECOVERED = 2;
+
+	//DONE: add constructors
+
+	public Person(int x, int y) {
+		this(x, y, false);
 	}
 
-	public void update(Dimension2D dim) {
-		//TODO Update your position
+	public Person(int x, int y, boolean infected) {
+		super(x, y, PERSON_RADIUS, PERSON_SPEED, infected ? INFECTED_COLOR : HEALTHY_COLOR);
+
+		if (infected) {
+			status = INFECTED;
+		} else {
+			status = HEALTHY;
+		}
+
+		infectedTime = 0;
+	}
+
+	@Override
+	public void drawOn(Graphics2D g) {
+		//USE COLOR CONSTANTS to draw people with different statuses
+		super.drawOn(g);
+	}
+
+	@Override
+	public void update(Dimension dim) {
+		//DONE Update your position
+		super.update(dim);
+
+		if (isInfected()) {
+			infectedTime++;
+
+			if (infectedTime >= TIME_TO_RECOVER) {
+				status = RECOVERED;
+				setColor(RECOVERED_COLOR);
+			}
+		}
 	}
 	
 	public void bounce(Person other) {
-		//TODO Infect healthy people when they bounce off of infected people
+		//DONE Infect healthy people when they bounce off of infected people
+	super.bounce(other);
+
+	boolean thisInfected = this.isInfected();
+	boolean otherInfected = other.isInfected();
+
+	if (thisInfected && other.isHealthy()) {
+		other.status = INFECTED;
+		other.infectedTime = 0;
+		other.setColor(INFECTED_COLOR);
+	}
+
+	if (otherInfected && this.isHealthy()) {
+		this.status = INFECTED;
+		this.infectedTime = 0;
+		this.setColor(INFECTED_COLOR);
+		}
+	}
+
+	@Override
+	public void bounce(SimulationObject other) {
+		if (other instanceof Person) {
+			bounce((Person) other);
+		} else {
+			super.bounce(other);
+		}
 	}
 
 	public boolean isHealthy() {
-		// TODO return true if this person is healthy.  False if infected or recovered
-		return false;
+		// DONE return true if this person is healthy.  False if infected or recovered
+		return status == HEALTHY;
 	}
 
 	public boolean isInfected() {
-		// TODO return true if this person is sick.  False if infected or recovered
-		return false;
+		// DONE return true if this person is sick.  False if infected or recovered
+		return status == INFECTED;
 	}
 	
 	public boolean isRecovered() {
-		// TODO return true if this person is recovered.  False if infected or healthy
-		return false;
+		// DONE return true if this person is recovered.  False if infected or healthy
+		return status == RECOVERED;
 	}
 
 	public boolean overlapsWith(Person other) {
-		// TODO return true if the person is within range of another
-		return false;
+		// DONE return true if the person is within range of another
+		return super.overlapsWith(other);
 	}
 
 

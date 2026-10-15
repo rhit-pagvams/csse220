@@ -23,8 +23,8 @@ import javax.swing.Timer;
  * 
  *************************************************************************************** 
  *         REQUIRED HELP CITATION
- * 
- *         TODO: cite your help here or say "only used CSSE220 materials"
+ * 			only used CSSE220 materials
+ *         DONE: cite your help here or say "only used CSSE220 materials"
  *************************************************************************************** 
  */
 public class SimulationViewer {
@@ -101,14 +101,35 @@ public class SimulationViewer {
 		//YOU DO NOT HAVE TO MODIFY CODE ABOVE HERE //
 		//////////////////////////////////////////////
 		
-		//TODO Part 3 add buttons to add ChargedParticles, see JButton addParticle for an example
+		//DONE Part 3 add buttons to add ChargedParticles, see JButton addParticle for an example
+
+		JButton addChargedParticles = new JButton("Add ChargedParticles");
+
+		addChargedParticles.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				simulationComponent.addChargedParticles(
+						(Integer)addNumberSelector.getSelectedItem());
+			}
+		});
+
+		buttonPanel.add(addChargedParticles);
 		
 		
 		
+		//DONE Part 4 add buttons to add Persons, see JButton addParticle for an example
 		
-		//TODO Part 4 add buttons to add Persons, see JButton addParticle for an example
-		
-		
+		JButton addPeople = new JButton("Add People");
+
+		addPeople.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				simulationComponent.addPeople(
+						(Integer)addNumberSelector.getSelectedItem());
+			}
+		});
+
+		buttonPanel.add(addPeople);
 		
 		
 		
